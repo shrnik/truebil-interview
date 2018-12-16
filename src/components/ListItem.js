@@ -23,7 +23,7 @@ class ListItem extends Component {
         <Content
           status={this.state.status}
           data={this.props.data}
-          details={this.props.content}
+          content={this.props.content}
         />
       </div>
     );
