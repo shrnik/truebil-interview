@@ -2,7 +2,7 @@ import React from "react";
 
 export class Step1 extends React.Component {
   state = {
-    showcars: false
+    showCars: true
   };
   handleCarList = e => {
     e.preventDefault();
@@ -13,6 +13,7 @@ export class Step1 extends React.Component {
   render() {
     let status = this.props.status;
     let data = this.props.data;
+    console.log(this.state.showCars);
     return (
       <React.Fragment>
         <div className="heading">
@@ -20,13 +21,24 @@ export class Step1 extends React.Component {
             ? "You have taken test drive"
             : "Please Select cars for test drive"}
         </div>
-        {data.cars.length > 1 ? (
-          <div className="details">
-            {status === "completed" && data.cars[0]} and{" "}
-            <a href="" type="button" onclick={this.handleCarList}>
-              2 others
-            </a>
-          </div>
+        {status === "completed" && data.cars.length > 1 ? (
+          this.state.showCars ? (
+            <div className="details">
+              {status === "completed" && data.cars[0]} and{" "}
+              <a href="" type="button" onClick={this.handleCarList}>
+                {data.cars.length - 1} others
+              </a>
+            </div>
+          ) : (
+            <div className="details">
+              {data.cars.map(car => {
+                return <div>{car}</div>;
+              })}
+              <a href="" type="button" onClick={this.handleCarList}>
+                Hide
+              </a>
+            </div>
+          )
         ) : (
           <div className="details">
             {status === "completed" && data.cars[0]}

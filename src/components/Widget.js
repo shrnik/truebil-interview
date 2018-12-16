@@ -9,33 +9,7 @@ import { Step5 } from "./Details/Step5";
 class Widget extends Component {
   state = {
     currentStep: 3,
-    data: [
-      {
-        date: "14 May",
-        action: "You Have taken test Drive",
-        details: "2010 White Alto LXI and 2 others"
-      },
-      {
-        date: "15 May",
-        action: "Pay Token",
-        details: "for 2010 White Alto LXI"
-      },
-      {
-        date: "15 May",
-        action: "Processing your loan",
-        details: "Usually takes 3-6 for different banks"
-      },
-      {
-        date: "25 May",
-        action: "Take car Delivery",
-        details: "From our Mumbai showroom"
-      },
-      {
-        date: "14 May",
-        action: "Start Ownership Transfer Process",
-        details: "Please bring the listed documents at the time of delivery"
-      }
-    ],
+
     dataNew: [
       {
         date: "14 MAY",
@@ -81,7 +55,7 @@ class Widget extends Component {
           }}
         />
         <ListItem
-          data={this.state.data[0]}
+          data={this.state.dataNew[2]}
           step={3}
           currentStep={this.state.currentStep}
           content={() => {
@@ -97,7 +71,7 @@ class Widget extends Component {
           }}
         />
         <ListItem
-          data={this.state.data[0]}
+          data={this.state.dataNew[4]}
           step={5}
           currentStep={this.state.currentStep}
           content={() => {
