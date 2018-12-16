@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import ListItem from "./ListItem";
-import { Step1 } from "./Details/Step1";
-import { Step2 } from "./Details/Step2";
-import { Step3 } from "./Details/Step3";
-import { Step4 } from "./Details/Step4";
-import { Step5 } from "./Details/Step5";
+import { Step1 } from "./Steps/Step1";
+import { Step2 } from "./Steps/Step2";
+import { Step3 } from "./Steps/Step3";
+import { Step4 } from "./Steps/Step4";
+import { Step5 } from "./Steps/Step5";
 
 class Widget extends Component {
   state = {
