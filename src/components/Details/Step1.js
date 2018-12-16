@@ -20,10 +20,18 @@ export class Step1 extends React.Component {
             ? "You have taken test drive"
             : "Please Select cars for test drive"}
         </div>
-        <div className="details">
-          {status === "completed" && data.cars && data.cars[0]}
-          <a>{}</a>
-        </div>
+        {data.cars.length > 1 ? (
+          <div className="details">
+            {status === "completed" && data.cars[0]} and{" "}
+            <a href="" type="button" onclick={this.handleCarList}>
+              2 others
+            </a>
+          </div>
+        ) : (
+          <div className="details">
+            {status === "completed" && data.cars[0]}
+          </div>
+        )}
       </React.Fragment>
     );
   }

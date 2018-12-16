@@ -8,7 +8,7 @@ import { Step5 } from "./Details/Step5";
 
 class Widget extends Component {
   state = {
-    currentStep: 2,
+    currentStep: 3,
     data: [
       {
         date: "14 May",
